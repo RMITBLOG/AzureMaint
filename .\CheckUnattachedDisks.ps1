@@ -1,6 +1,21 @@
-# Ryan Mangan 2023
-#ryanmangansitblog.com
-# Script to scan Subscription for unattached Managed Disks. Creaping consumption costs can be assioced to disks not being removed once the VM has been deleted.
+<#
+.SYNOPSIS
+This script scans for unattached Managed Disks in Azure subscriptions. 
+
+.DESCRIPTION
+Creeping consumption costs can be associated with disks not being removed once the VM has been deleted. 
+This script will scan all Azure subscriptions under the connected account, and list out all the unattached Managed Disks. 
+It will also mark the disk names that contain "ASRReplica".
+
+.AUTHOR
+Ryan Mangan
+Website: ryanmangansitblog.com
+Date: 2023
+
+.EXAMPLE
+.\CheckUnattachedDisks.ps1
+
+#>
 
 # Import the Azure module
 Import-Module Az
